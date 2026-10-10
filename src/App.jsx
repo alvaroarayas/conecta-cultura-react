@@ -1,4 +1,5 @@
 import { Route, Routes } from "react-router-dom";
+import { guardarInscripciones } from "./utils/persistencia";
 import Inicio from "./pages/Inicio";
 import Actividades from "./pages/Actividades";
 import DetalleActividad from "./pages/DetalleActividad";
@@ -20,5 +21,9 @@ function App() {
     </>
   );
 }
+
+useEffect(() => {
+  guardarInscripciones(inscripciones);
+}, [inscripciones]);
 
 export default App;
